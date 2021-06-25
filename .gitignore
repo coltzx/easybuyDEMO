@@ -3,6 +3,7 @@ easybuy/target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+application.yml
 
 ### STS ###
 .apt_generated

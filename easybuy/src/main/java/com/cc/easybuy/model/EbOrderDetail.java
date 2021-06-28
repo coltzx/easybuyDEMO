@@ -1,5 +1,7 @@
 package com.cc.easybuy.model;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -10,6 +12,7 @@ public class EbOrderDetail implements Serializable {
      *
      * @mbggenerated
      */
+    @TableId
     private Integer eodId;
 
     /**

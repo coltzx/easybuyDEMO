@@ -117,4 +117,20 @@ public class EbUser implements Serializable {
     public void setEuStatus(Integer euStatus) {
         this.euStatus = euStatus;
     }
+
+    @Override
+    public String toString() {
+        return "EbUser{" +
+                "euUserId='" + euUserId + '\'' +
+                ", euUserName='" + euUserName + '\'' +
+                ", euPassword='" + euPassword + '\'' +
+                ", euSex='" + euSex + '\'' +
+                ", euBirthday=" + euBirthday +
+                ", euIdentityCode='" + euIdentityCode + '\'' +
+                ", euEmail='" + euEmail + '\'' +
+                ", euMobile='" + euMobile + '\'' +
+                ", euAddress='" + euAddress + '\'' +
+                ", euStatus=" + euStatus +
+                '}';
+    }
 }

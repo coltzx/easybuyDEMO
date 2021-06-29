@@ -145,4 +145,18 @@ public class EbOrder implements Serializable {
     public void setEoType(Integer eoType) {
         this.eoType = eoType;
     }
+
+    @Override
+    public String toString() {
+        return "EbOrder{" +
+                "eoId=" + eoId +
+                ", eoUserId='" + eoUserId + '\'' +
+                ", eoUserName='" + eoUserName + '\'' +
+                ", eoUserAddress='" + eoUserAddress + '\'' +
+                ", eoCreateTime=" + eoCreateTime +
+                ", eoCost=" + eoCost +
+                ", eoStatus=" + eoStatus +
+                ", eoType=" + eoType +
+                '}';
+    }
 }

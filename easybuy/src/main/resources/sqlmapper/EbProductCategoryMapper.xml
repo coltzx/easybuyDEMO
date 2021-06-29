@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cc.easybuy.mapper.EbProductCategoryMapper">
+    <select id="selectBigCate" resultType="com.cc.easybuy.model.EbProductCategory">
+        select *
+        from eb_product_category
+        where epc_id = epc_parent_id
+    </select>
+
+    <select id="selectSmallCate" resultType="com.cc.easybuy.model.EbProductCategory">
+        select *
+        from eb_product_category
+        where epc_id != epc_parent_id
+    </select>
+</mapper>

@@ -17,4 +17,7 @@ public class EbProductService {
         Page<EbProduct> page = new Page<>(psize,limit);
         return ebProductMapper.selectPage(page,null);
     }
+    public EbProduct detail(int epId){
+        return ebProductMapper.selectById(epId);
+    }
 }

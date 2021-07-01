@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <title>易买网 - 首页</title>
-<link type="text/css" rel="stylesheet" href="css/style.css" />
-<script type="text/javascript" src="scripts/function.js"></script>
+<link type="text/css" rel="stylesheet" th:href="@{/css/style.css}" />
+<script type="text/javascript" th:src="@{/scripts/function.js}"></script>
 </head>
 <body>
 <div id="header" class="wrap">
-	<div id="logo"><img src="images/logo.gif" /></div>
+	<div id="logo"><img th:src="@{/images/logo.gif}" /></div>
 	<div class="help"><a href="#" class="shopping">购物车</a><a href="login.html">登录</a><a href="register.html">注册</a><a href="guestbook.html">留言</a></div>
 	<div class="navbar">
 		<ul class="clearfix">
@@ -40,32 +40,15 @@
 </div>
 <div id="main" class="wrap">
 	<div class="lefter">
-		<div class="box">
-			<div class="box" th:include="cateqory::copy"></div>
-<!--		  <h2>商品分类</h2>-->
-<!--			<dl>-->
-<!--				<dt>图书音像</dt>-->
-<!--				<dd><a href="product-list.html">图书</a></dd>-->
-<!--				<dd><a href="product-list.html">音乐</a></dd>-->
-<!--				<dt>百货</dt>-->
-<!--				<dd><a href="product-list.html">运动健康</a></dd>-->
-<!--				<dd><a href="product-list.html">服装</a></dd>-->
-<!--				<dd><a href="product-list.html">家居</a></dd>-->
-<!--				<dd><a href="product-list.html">美妆</a></dd>-->
-<!--				<dd><a href="product-list.html">母婴</a></dd>-->
-<!--				<dd><a href="product-list.html">食品</a></dd>-->
-<!--				<dd><a href="product-list.html">手机数码</a></dd>-->
-<!--				<dd><a href="product-list.html">家具首饰</a></dd>-->
-<!--				<dd><a href="product-list.html">手表饰品</a></dd>-->
-<!--			</dl>-->
+		<div class="box" th:include="category :: copy">
 		</div>
 		<div class="spacer"></div>
 		<div class="last-view">
 			<h2>最近浏览</h2>
 			<dl class="clearfix">
-				<dt><img src="images/product/0_tiny.gif" /></dt>
+				<dt><img th:src="@{/images/product/0_tiny.gif}" /></dt>
 				<dd><a href="product-view.html">法国德菲丝松露精品巧克力500g/盒</a></dd>
-				<dt><img src="images/product/0_tiny.gif" /></dt>
+				<dt><img th:src="@{/images/product/0_tiny.gif}" /></dt>
 				<dd><a href="product-view.html">法国德菲丝松露精品巧克力500g/盒</a></dd>
 			</dl>
 		</div>
@@ -73,19 +56,24 @@
 	<div id="product" class="main">
 		<h1 th:text="${product.epName}">铁三角 Audio-Technica ATH-EQ300M-SV 银色 挂耳式耳机</h1>
 		<div class="infos">
-			<div class="thumb"><img th:src="@{'/images/product/'+${product.epPrice}}" /></div>
+			<div class="thumb"><img th:src="@{'/images/product/'+${product.epFileName}}" /></div>
 			<div class="buy">
-				<p>商城价：<span class="price" th:text="'￥'+${product.epPrice}">￥99.00</span></p>
-				<p th:if="${product.getEpStock()>0}" th:text="'库 存：有货（库存'">库　存：有货(库存3件)			  </p>
-				<p th:if="${product.getEpStock()<=0}"
-					th:text="'库 存：无货（有货通知'">库　存：有货(库存3件)			  </p>
+				<p>商城价：<span class="price" th:text="'¥'+${product.epPrice}">￥99.00</span></p>
+				<p	th:if="${product.getEpStock()>0}"
+					th:text="'库存: 有货(库存'+${product.getEpStock()}+'件'"
+						>库　存：有货(库存3件)
+				</p>
+				<p	th:if="${product.getEpStock()<=0}"
+					  th:text="'库存: 无货'"
+				>库　存：有货(库存3件)
+				</p>
 			  <div class="button"><input type="button" name="button" value=""/><a href="#">放入购物车</a></div>
 			</div>
 			<div class="clear"></div>
 		</div>
 		<div class="introduce">
 			<h2><strong>商品详情</strong></h2>
-			<div class="text" th:text="${product.epDescription}">
+			<div class="text">
 				铁三角<br />
 			</div>
 		</div>

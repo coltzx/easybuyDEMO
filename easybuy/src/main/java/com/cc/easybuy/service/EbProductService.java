@@ -19,5 +19,6 @@ public class EbProductService {
     }
     public EbProduct detail(int epId){
         return ebProductMapper.selectById(epId);
+
     }
 }

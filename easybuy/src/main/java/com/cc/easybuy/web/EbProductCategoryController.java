@@ -22,5 +22,6 @@ public class EbProductCategoryController {
         Page<EbProduct> productPage = ebProductCategoryService.findProductBycate(psize,pageSize,epcId);
         model.addAttribute("productPage",productPage);
         return "product-list";
+
     }
 }

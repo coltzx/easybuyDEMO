@@ -18,5 +18,6 @@ public class EbProductController {
 
         model.addAttribute("product",ebProduct);
         return "product-view";
+
     }
 }

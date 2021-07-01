@@ -44,6 +44,7 @@ public class IndexController {
         //model.addAttribute("cateMap",cateMap);
         request.getSession().setAttribute("cateMap",cateMap);
         return "index";
+
     }
 }
 

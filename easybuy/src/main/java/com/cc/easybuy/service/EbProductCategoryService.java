@@ -36,5 +36,6 @@ public class EbProductCategoryService {
         cateMap.put("bigs",bigCates);
         cateMap.put("smalls",smallCates);
         return cateMap;
+
     }
 }

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="copy">
+    <h2>商品分类</h2>
+    <dl th:each="big : ${session.cateMap['bigs']}">
+        <dt th:text="${big.epcName}">图书音像</dt>
+        <dd th:each="small : ${session.cateMap['smalls']}" th:if="${big.epcId==small.epcParentId}">
+            <a th:href="@{/product_category/detail(epcId=${small.epcId})}" th:text="${small.epcName}">图书</a>
+        </dd>
+    </dl>
+</div>
+</body>
+</html>

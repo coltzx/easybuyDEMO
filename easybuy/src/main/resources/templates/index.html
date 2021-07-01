@@ -57,8 +57,8 @@
 
 				<li th:each="product: ${productPage.getRecords()}">
 					<dl>
-						<dt><a href="product-view.html" target="_blank"><img th:src="@{'/images/product/'+${product.epFileName}}" /></a></dt>
-						<dd class="title"><a href="product-view.html" target="_blank" th:text="${product.epName}">法国德菲丝松露精品巧克力500g/盒</a></dd>
+						<dt><a th:href="@{/product/detail(epId=${product.epId})}" target="_blank"><img th:src="@{'/images/product/'+${product.epFileName}}" /></a></dt>
+						<dd class="title"><a th:href="@{/product/detail(epId=${product.epId})}" target="_blank" th:text="${product.epName}">法国德菲丝松露精品巧克力500g/盒</a></dd>
 						<dd class="price" th:text="'¥'+${product.epPrice}">￥108.0</dd>
 					</dl>
 				</li>

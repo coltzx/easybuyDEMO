@@ -6,4 +6,5 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface EbProductMapper extends BaseMapper<EbProduct> {
+
 }

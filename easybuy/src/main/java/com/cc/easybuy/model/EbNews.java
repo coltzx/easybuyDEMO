@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
  * @Date: 2019-10-27 15:41
  */
 public class EbNews {
+
     //属性--字段
     //字段：en_id(int)---属性：enId(int)
     @TableId

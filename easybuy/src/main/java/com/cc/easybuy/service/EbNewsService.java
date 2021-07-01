@@ -20,5 +20,6 @@ public class EbNewsService {
         page.addOrder(OrderItem.desc("en_create_time"));//根据时间排序
         return ebNewsMapper.selectPage(page,null);
 
+
     }
 }

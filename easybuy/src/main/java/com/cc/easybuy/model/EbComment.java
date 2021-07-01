@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
  * @Date: 2019-10-27 15:41
  */
 public class EbComment {
+
     //编号
     @TableId
     private int ecId;

@@ -118,6 +118,7 @@ public class EbUser implements Serializable {
         this.euStatus = euStatus;
     }
 
+
     @Override
     public String toString() {
         return "EbUser{" +

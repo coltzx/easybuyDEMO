@@ -28,6 +28,7 @@ public class EbProductCategoryService {
         .eq("epc_child_id",epcId));
     }
 
+
     public Map<String, List<EbProductCategory>> selectBigAndSmallCate(){
         List<EbProductCategory> bigCates = ebProductCategoryMapper.selectBigCate();
         List<EbProductCategory> smallCates = ebProductCategoryMapper.selectSmallCate();

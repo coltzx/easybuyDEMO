@@ -7,17 +7,29 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/product")
 public class EbProductController {
     @Autowired
     private EbProductService ebProductService;
+
     @RequestMapping("/detail")
-    public String detail(Model model, int epId){
+    public String detail(Model model, int epId) {
         EbProduct ebProduct = ebProductService.detail(epId);
 
-        model.addAttribute("product",ebProduct);
+        model.addAttribute("product", ebProduct);
         return "product-view";
 
     }
+
+
+    @RequestMapping("/add_car")
+    public String addCar(int epId, HttpServletRequest request) {
+        ebProductService.addCar(epId, request);
+
+        return "shopping";
+    }
+
 }

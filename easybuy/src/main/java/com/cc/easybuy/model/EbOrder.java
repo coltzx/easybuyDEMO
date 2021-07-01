@@ -148,6 +148,7 @@ public class EbOrder implements Serializable {
 
     @Override
     public String toString() {
+
         return "EbOrder{" +
                 "eoId=" + eoId +
                 ", eoUserId='" + eoUserId + '\'' +

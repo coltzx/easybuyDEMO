@@ -67,7 +67,9 @@
 					  th:text="'库存: 无货'"
 				>库　存：有货(库存3件)
 				</p>
-			  <div class="button"><input type="button" name="button" value=""/><a href="#">放入购物车</a></div>
+			  <div class="button"><input type="button" name="button" value=""/>
+				  <a th:href="@{/product/add_car(epId=${product.epId})}">放入购物车</a>
+			  </div>
 			</div>
 			<div class="clear"></div>
 		</div>

@@ -10,6 +10,7 @@ import java.io.Serializable;
  * @Date: 2019-10-27 15:41
  */
 public class EbProductCategory implements Serializable {
+
     @TableId
     private Integer epcId;
     private String epcName;

@@ -38,6 +38,7 @@ public class IndexController {
         Page<EbNews> newsPage = ebNewsService.list(newspsize,newspageSize);
         Map<String, List<EbProductCategory>> cateMap = ebProductCategoryService.selectBigAndSmallCate();
 
+
         model.addAttribute("productPage",productPage);
         model.addAttribute("newsPage",newsPage);
         //model.addAttribute("cateMap",cateMap);

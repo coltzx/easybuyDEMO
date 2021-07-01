@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 
 public class EbProduct implements Serializable {
 
+
     @TableId
     private Integer epId;
     private String epName;

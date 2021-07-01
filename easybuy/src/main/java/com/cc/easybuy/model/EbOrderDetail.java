@@ -21,6 +21,7 @@ public class EbOrderDetail implements Serializable {
      *
      * @mbggenerated
      */
+
     private Integer eoId;
 
     /**

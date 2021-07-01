@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/product_category")
 public class EbProductCategoryController {
 
+
     @Autowired
     private EbProductCategoryService ebProductCategoryService;
     @RequestMapping("/detail")

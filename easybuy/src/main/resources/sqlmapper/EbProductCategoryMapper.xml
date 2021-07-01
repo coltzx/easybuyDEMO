@@ -13,5 +13,6 @@
         select *
         from eb_product_category
         where epc_id != epc_parent_id
+
     </select>
 </mapper>

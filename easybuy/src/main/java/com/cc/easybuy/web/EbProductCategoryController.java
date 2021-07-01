@@ -16,7 +16,7 @@ public class EbProductCategoryController {
     @Autowired
     private EbProductCategoryService ebProductCategoryService;
     @RequestMapping("/detail")
-    public String detil(int epcId, Model model,
+    public String detail(int epcId, Model model,
                         @RequestParam(defaultValue = "1") int psize,
                         @RequestParam(defaultValue = "8") int pageSize){
         Page<EbProduct> productPage = ebProductCategoryService.findProductBycate(psize,pageSize,epcId);

@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class EbProduct implements Serializable {
 
@@ -20,7 +21,7 @@ public class EbProduct implements Serializable {
     private String epFileName;
 
     @TableField(exist = false)
-    private int count;//表示购买数量
+    private int count = 1;//表示购买数量
 
     public Integer getEpId() {
         return epId;
@@ -92,6 +93,19 @@ public class EbProduct implements Serializable {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EbProduct ebProduct = (EbProduct) o;
+        return epId.equals(ebProduct.epId);
+    }
+
+    @Override
+    public int hashCode() {
+        return 100;
     }
 
     @Override

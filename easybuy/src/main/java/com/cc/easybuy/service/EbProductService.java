@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class EbProductService {
@@ -29,12 +31,25 @@ public class EbProductService {
     public void addCar(int epId, HttpServletRequest request){
         EbProduct newProduct = ebProductMapper.selectById(epId);
         HttpSession session = request.getSession();
-        List<EbProduct> list = null;
-        list = (List<EbProduct>)session.getAttribute("car");
-        if (list==null){
-            list = new ArrayList<>();
+        Set<EbProduct> set = null;
+        set = (Set<EbProduct>)session.getAttribute("car");
+        if (set==null){
+            set = new HashSet<>();
         }
-        list.add(newProduct);
-        session.setAttribute("car",list);
+        boolean flag = false;
+        for(EbProduct oldEbProduct :set){
+            if(newProduct.getEpId().equals(oldEbProduct.getEpId())){
+                oldEbProduct.setCount(oldEbProduct.getCount()+1);
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            set.add(newProduct);
+        }
+        session.setAttribute("car",set);
     }
+
+
+
 }

@@ -24,12 +24,16 @@ public class EbProductController {
 
     }
 
-
     @RequestMapping("/add_car")
     public String addCar(int epId, HttpServletRequest request) {
         ebProductService.addCar(epId, request);
 
         return "shopping";
+    }
+
+    @RequestMapping("/pay")
+    public String pay(){
+        return "shopping-result";
     }
 
 }
